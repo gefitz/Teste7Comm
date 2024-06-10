@@ -1,0 +1,6 @@
+@Teste7Comm.API_HostAddress = http://localhost:5244
+
+GET {{Teste7Comm.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

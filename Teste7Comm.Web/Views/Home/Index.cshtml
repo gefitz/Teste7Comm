@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Teste7Comm.Web.Model.PessoaModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="pull-left">
+                <a asp-action="CadastrarPessoa" class="btn btn-primary">
+                    <span title="Create New" class="fas fa-plus"></span> Nova Pessoa
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.nome)</th>
+                <th>@Html.DisplayNameFor(model => model.cpf)</th>
+                <th>@Html.DisplayNameFor(model => model.email)</th>
+                <th>@Html.DisplayNameFor(model => model.telefone)</th>
+                <th>CEP</th>
+                <th>Cidade / Estado </th>
+                <th> Rua</th>
+                <th>@Html.DisplayNameFor(model => model.dthNascimento)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.nome</td>
+                    <td>@item.cpf</td>
+                    <td>@item.email</td>
+                    <td>@item.telefone</td>
+
+                    <td>@item.endereco.cep</td>
+                    <td>@item.endereco.localidade / @item.endereco.uf</td>
+                    <td>@item.endereco.logradouro - @item.endereco.numero</td>
+
+                    <td>@item.dthNascimento.Date.ToString("dd/MM/yyyy")</td>
+                    <td>
+                       <a type = 'submit' asp-action="UpdatePessoa" asp-route-id="@item.cpf" title="Edita" class="btn btn-warning">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <a type='submit' asp-action="DeletarPessoa" asp-route-id="@item.cpf"  title="Deleta" class="btn btn-danger">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

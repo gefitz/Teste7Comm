@@ -1,0 +1,98 @@
+﻿@model Teste7Comm.Web.Model.PessoaModel
+@{
+    ViewData["Title"] = "Cadastrar Pessoa";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Update">
+    <div class="form-horizontal">
+        <hr />
+        <input asp-for="id" hidden />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="nome" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="cpf" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="cpf" class="form-control" />
+                <span asp-validation-for="cpf" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="email" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="telefone" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="dthNascimento" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="dthNascimento" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.cep" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.cep" class="form-control" onkeyup="BuscaCep(this)" />
+                <span asp-validation-for="endereco.cep" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.logradouro" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.logradouro" class="form-control" />
+                <span asp-validation-for="endereco.logradouro" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.numero" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.numero" type="number" class="form-control" />
+                <span asp-validation-for="endereco.numero" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.bairro" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.bairro" class="form-control" />
+                <span asp-validation-for="endereco.bairro" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.localidade" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.localidade" class="form-control" />
+                <span asp-validation-for="endereco.localidade" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="endereco.uf" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="endereco.uf" class="form-control" />
+                <span asp-validation-for="endereco.uf" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group mt-1">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
+            </div>
+        </div>
+    </div>
+</form>
